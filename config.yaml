@@ -1,0 +1,22 @@
+theme: "hyde"
+baseURL: "/"
+languageCode: en-us
+title: shadowr
+Menus:
+  main:
+    - Name: "Github"
+      URL: "https://github.com/ricilandolt/shadowr/"
+    - Name: "LinkedIn"
+      URL: "https://ch.linkedin.com/in/ricardo-landolt/"
+      
+params:
+  description : "Selenium plugin to manage multiple levels of shadow elements on web page"
+  
+disqusShortname : spf13
+
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
