@@ -25,7 +25,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # Introduction
 
-This year I was allowed to write a master's thesis together with my student colleague. Our work pursued the goal of building a cross-brand new car configurator. We got the data for our configurator from the respective brand websites, which were dynamic websites. Because of this, we had to work with R Selenium to be able to interact with the websites. 
+In Spring 2022, I was allowed to write a master's thesis together with my student colleague. Our work pursued the goal of building a cross-brand new car configurator. We got the data for our configurator from the respective brand websites, which were dynamic websites. Because of this, we had to work with R Selenium to be able to interact with the websites. 
 
 For two or three websites such as [https://configure.bmw.ch/de_CH/configure/F40](https://configure.bmw.ch/de_CH/configure/F40) or [https://www.mercedes-benz.ch/de/passengercars/models.html](https://www.mercedes-benz.ch/de/passengercars/models.html), we could not find certain dom elements because shadow dom elements were used on these websites. 
 
@@ -35,11 +35,11 @@ The problem is that Custom HTML tags can't be directly identified with selenium 
 
 But when you have a multi level shadow dom structure and have to do different things with the elements like get the text or click them, sooner or later things get complicated. You would have to handle a lot of long strings and depending on the action and amount of elements also modify/extend the strings.  
 
-That is not reliable and after a little research Icame acroos the [pyshadow](https://pypi.org/project/pyshadow/) module for python, which is able to handle such shadow dom elements. So I decided to release my own r package shadowr to enable R user a more comfortable and reliable way to work with shadow dom elements. The Package is available on cran and you find the github repo here.  
+That is not reliable and after a little research I came across the [pyshadow](https://pypi.org/project/pyshadow/) module for python, which is able to handle such shadow dom elements. So I decided to release an r package shadowr to enable R users a more comfortable and reliable way to work with shadow dom elements. The Package is available on cran and you can find the github repo [here](https://github.com/ricilandolt/shadowr).  
 
 # What the shadowr package does 
 
-To use the shadowr package you have use the class constructer shadow with your R Selenium Driver to intialize a shadow s4 object.  
+To use the shadowr package you have to use the class constructor shadow with your R Selenium Driver to initialize a shadow s4 object.  
 
 ```{r one, eval=FALSE}
 library(shadowr) 
@@ -52,7 +52,7 @@ remDr$navigate(url)
 shadow_rd <- shadow(remDr) 
 ```
 
-After that you can use the class methods of the shadow object, which is straight forward if you already familiar with R Selenium. You can provide a css selector and search for single or multiple webelements like follows 
+After that you can use the class methods of the shadow object, which is straight forward if you are already familiar with R Selenium. You can provide a css selector and search for single or multiple webelements like follows 
 
 ```{r two, eval=FALSE}
 element <- find_element(shadow_rd, 'paper-tab[title="Settings"]') 
@@ -60,7 +60,7 @@ elements <- find_elements(shadow_rd, 'paper-tab[title="Settings"]')
 element$getElementText() 
 ```
 
-Optional you can also  provide addtional to the css selector a webelment, starting the search from there. 
+Optionally, you can also provide an additional webelement to the css selector, starting the search from there. 
 
 ```{r three, eval=FALSE}
 element <- find_element(shadow_rd, 'paper-tab[title="Settings"]') 
@@ -68,7 +68,7 @@ subelement <- find_element(shadow_rd, 'div',element)
 subelement $getElementText() 
 ```
 
-Depending on the method, either a RSelenium::WebElement or a boolean is returned. You can access the RSelenium::WebElement like you used to with methos like getElementText, getElementAttribute or isElementDisplayed. Altough there some simliar functions in the shadowr package implemented. 
+Depending on the method, either a RSelenium::WebElement or a boolean is returned. You can access the RSelenium::WebElement like you used to with methods like getElementText, getElementAttribute or isElementDisplayed. Altough there are some similar functions in the shadowr package implemented. 
 
 
 
