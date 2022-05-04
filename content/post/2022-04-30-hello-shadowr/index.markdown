@@ -23,7 +23,8 @@ menu: main
 
 # Introduction
 
-In Spring 2022, I was allowed to write a master's thesis together with my student colleague. Our work pursued the goal of building a cross-brand new car configurator. We got the data for our configurator from the respective brand websites, which were dynamic websites. Because of this, we had to work with R Selenium to be able to interact with the websites. 
+In Spring 2022, I was allowed to write a master's thesis together with my student colleague. Our work pursued the goal of building a [cross-brand new car configurator](https://landoltricardo.shinyapps.io/whicha/
+). We got the data for our configurator from the respective brand websites, which were dynamic websites. Because of this, we had to work with R Selenium to be able to interact with the websites. 
 
 For two or three websites such as [https://configure.bmw.ch/de_CH/configure/F40](https://configure.bmw.ch/de_CH/configure/F40) or [https://www.mercedes-benz.ch/de/passengercars/models.html](https://www.mercedes-benz.ch/de/passengercars/models.html), we could not find certain dom elements because shadow dom elements were used on these websites. 
 
