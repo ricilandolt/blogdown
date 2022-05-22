@@ -8,6 +8,8 @@ Menus:
       URL: "https://github.com/ricilandolt/shadowr/"
     - Name: "LinkedIn"
       URL: "https://ch.linkedin.com/in/ricardo-landolt/"
+    - Name: "R-bloggers"
+      URL: "https://www.r-bloggers.com/"
       
 params:
   description : "Selenium plugin to manage multiple levels of shadow elements on web page"
